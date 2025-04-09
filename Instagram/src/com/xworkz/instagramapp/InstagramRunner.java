@@ -8,7 +8,7 @@ public class InstagramRunner {
         InstagramDto dto = new InstagramDto();
 
         dto.setFullName("Rohit Sharma");
-        dto.setUserName("Rohit");
+        dto.setUserName("Rohit_Sharma_45");
         dto.setMobileNumberOrEmail("Sharma@gmail.com");
         dto.setPassword("Rohit@123");
         dto.setConfirmPassword("Rohit@123");
@@ -20,6 +20,11 @@ public class InstagramRunner {
 
         if(result == true){
             System.out.println("Instagram Account Created Successfully");
+            social.getUserDetails();
+
         }
+
     }
+
+
 }

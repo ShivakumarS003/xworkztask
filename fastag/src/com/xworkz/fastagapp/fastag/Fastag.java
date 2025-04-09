@@ -3,6 +3,7 @@ package com.xworkz.fastagapp.fastag;
 import com.xworkz.fastagapp.fastagdto.FastagDto;
 
 public class Fastag {
+    public FastagDto dto;
         public boolean processFastag(FastagDto dto) {
             boolean isProcessed = false;
             boolean validInfo = checkFastagInfo(dto);
@@ -10,6 +11,7 @@ public class Fastag {
             if(validInfo == true) {
                 isProcessed = true;
                 System.out.println("FASTag Registered Successfully");
+                this.dto = dto;
             } else {
                 System.out.println("FASTag Registration Failed");
             }
@@ -52,6 +54,14 @@ public class Fastag {
 
             return isValid;
         }
+    public  void getCustomerDetails(){
+        System.out.println("Vehicle Number is " + this.dto.getVehicleNumber());
+        System.out.println("Owner Name is " + this.dto.getOwnerName());
+        System.out.println("Vehicle Type is " + this.dto.getVehicleType());
+        System.out.println("Mobile Number is " + this.dto.getMobileNo());
+        System.out.println("KYC Document is " + this.dto.getKycDocument());
+
+    }
     }
 
 

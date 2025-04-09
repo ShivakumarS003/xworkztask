@@ -3,6 +3,7 @@ package com.xworkz.metroapp.metro;
 import com.xworkz.metroapp.metrodto.MetroDto;
 
 public class Metro {
+    public MetroDto dto;
         public boolean applyMetroPass(MetroDto dto) {
             boolean isApplied = false;
             boolean validForm = validateMetroInfo(dto);
@@ -10,6 +11,7 @@ public class Metro {
             if(validForm == true) {
                 isApplied = true;
                 System.out.println("Metro Pass Registration Successful");
+                this.dto = dto;
             } else {
                 System.out.println("Metro Pass Registration Failed");
             }
@@ -61,6 +63,16 @@ public class Metro {
             }
 
             return isValid;
+        }
+        public void getPassengersDetails(){
+            System.out.println("Passenger Name is " + this.dto.getPassengerName());
+            System.out.println("Gender is " + this.dto.getGender());
+            System.out.println("Date of Birth is " + this.dto.getDob());
+            System.out.println("Start Station is " + this.dto.getStartStation());
+            System.out.println("End Station is " + this.dto.getEndStation());
+            System.out.println("ID Proof is " + this.dto.getIdProof());
+            System.out.println("Travel Duration is " + this.dto.getTravelDuration());
+
         }
     }
 

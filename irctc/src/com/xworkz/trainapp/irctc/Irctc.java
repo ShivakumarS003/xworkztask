@@ -3,12 +3,14 @@ package com.xworkz.trainapp.irctc;
 import com.xworkz.trainapp.irctcdto.IrctcDto;
 
 public class Irctc {
+    public IrctcDto dto;
         public boolean initiateRegistration(IrctcDto dto) {
             boolean isRegistered = false;
             boolean valid = checkDetails(dto);
 
             if(valid == true) {
                 isRegistered = true;
+                this.dto = dto;
                 System.out.println("IRCTC Account Created Successfully");
             } else {
                 System.out.println("IRCTC Registration Failed");
@@ -51,6 +53,13 @@ public class Irctc {
             }
 
             return isValid;
+        }
+        public void getCustomerDetails(){
+            System.out.println("User Name is " + this.dto.getUserName());
+            System.out.println("User Mobile Number is " + this.dto.getMobileNumber());
+            System.out.println("User Email ID is " + this.dto.getEmailId());
+            System.out.println("Account Password is " + this.dto.getPassword());
+
         }
     }
 

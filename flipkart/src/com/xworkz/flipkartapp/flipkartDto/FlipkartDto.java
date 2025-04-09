@@ -8,7 +8,6 @@ public class FlipkartDto {
     private String confirmPassword;
     private String deliveryAddress;
     private String pinCode;
-    private String otp;
 
     public void setFullName(String fullName){
         this.fullName = fullName;
@@ -59,10 +58,5 @@ public class FlipkartDto {
         return pinCode;
     }
 
-    public void setOtp(String otp){
-        this.otp = otp;
-    }
-    public String getOtp(){
-        return otp;
-    }
+
 }

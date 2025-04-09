@@ -8,7 +8,7 @@ public class FastagRunner {
             FastagDto dto = new FastagDto();
 
             dto.setVehicleNumber("KA01AB1234");
-            dto.setOwnerName("Meena Reddy");
+            dto.setOwnerName("Pavan");
             dto.setVehicleType("Car");
             dto.setMobileNo("9876543210");
             dto.setKycDocument("Aadhar Card");
@@ -18,6 +18,7 @@ public class FastagRunner {
 
             if(registered == true) {
                 System.out.println("FASTag ready for toll use!");
+                toll.getCustomerDetails();
             }
         }
     }

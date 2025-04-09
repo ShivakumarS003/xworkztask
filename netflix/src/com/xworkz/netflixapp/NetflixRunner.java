@@ -20,6 +20,8 @@ public class NetflixRunner {
 
             if(status == true) {
                 System.out.println("Netflix Account Created");
+                ott.getUserDetails();
+
             }
         }
     }

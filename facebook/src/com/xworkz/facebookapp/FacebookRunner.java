@@ -20,6 +20,7 @@ public class FacebookRunner {
 
         if(result == true){
             System.out.println("Facebook Account Created Successfully");
+            book.getUserDetails();
         }
     }
 }

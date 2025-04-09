@@ -13,13 +13,13 @@ public class AmazonRunner {
         dto.setRetypePassword("Anjali@789");
         dto.setAddress("123, JP Nagar, Bangalore");
         dto.setCountry("India");
-        dto.setOtp("A1B2C3");
 
         Amazon shop = new Amazon();
         boolean status = shop.processRegistration(dto);
 
         if(status == true){
             System.out.println("Amazon Account Created Successfully");
+            shop.getUserDetails();
         }
     }
 }

@@ -3,6 +3,7 @@ package com.xworkz.dlapp.drivinglicense;
 import com.xworkz.dlapp.drivinglincensedto.DrivingLicenseDto;
 
 public class DrivingLicense {
+    public DrivingLicenseDto dto;
         public boolean startRegistration(DrivingLicenseDto dto) {
             boolean isRegistered = false;
             boolean isEligible = validateDrivingDetails(dto);
@@ -10,6 +11,7 @@ public class DrivingLicense {
             if(isEligible == true) {
                 isRegistered = true;
                 System.out.println("Driving License Registration Successful");
+                this.dto=dto;
             } else {
                 System.out.println("Driving License Registration Failed");
             }
@@ -51,6 +53,14 @@ public class DrivingLicense {
             }
 
             return isValid;
+        }
+        public void getApllicantDetails(){
+            System.out.println("Applicant Name is " + this.dto.getApplicantName());
+            System.out.println("Date of Birth is " + this.dto.getDob());
+            System.out.println("Address is " + this.dto.getAddress());
+            System.out.println("Vehicle Category is " + this.dto.getVehicleCategory());
+            System.out.println("ID Proof is " + this.dto.getIdProof());
+
         }
     }
 

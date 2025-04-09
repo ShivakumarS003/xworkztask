@@ -18,6 +18,7 @@ public class RedbusRunner {
 
             if(result == true) {
                 System.out.println("Welcome to Redbus ");
+                bus.getUserDetails();
             }
         }
     }

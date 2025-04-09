@@ -3,6 +3,7 @@ package com.xworkz.zerodhaapp.zerodha;
 import com.xworkz.zerodhaapp.zerodhaDto.ZerodhaDto;
 
 public class Zerodha {
+    public  ZerodhaDto dto ;
     public boolean openAccount(ZerodhaDto dto){
         boolean isRegistered = false;
         boolean isValid = checkDetails(dto);
@@ -10,6 +11,7 @@ public class Zerodha {
         if(isValid == true){
             isRegistered = true;
             System.out.println("Zerodha Account Registration Successful");
+            this.dto = dto;
         }
         else{
             System.out.println("Zerodha Account Registration Failed");
@@ -81,5 +83,16 @@ public class Zerodha {
         }
 
         return isValid;
+    }
+    public void getUserDetails(){
+        System.out.println("User Full Name is " + this.dto.getFullName());
+        System.out.println("User Mobile Number is " + this.dto.getMobileNumber());
+        System.out.println("User Email is " + this.dto.getEmail());
+        System.out.println("User PAN Card Number is " + this.dto.getPanCard());
+        System.out.println("User Aadhar Card Number is " + this.dto.getAadharCard());
+        System.out.println("User Date of Birth is " + this.dto.getDob());
+        System.out.println("User Login ID is " + this.dto.getLoginId());
+        System.out.println("Account Password is " + this.dto.getPassword());
+
     }
 }

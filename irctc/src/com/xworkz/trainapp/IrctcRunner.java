@@ -18,6 +18,7 @@ public class IrctcRunner {
 
             if(result == true) {
                 System.out.println("Enjoy booking with IRCTC!");
+                train.getCustomerDetails();
             }
         }
     }

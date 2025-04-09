@@ -4,6 +4,8 @@ import com.xworkz.instagramapp.instagramDto.InstagramDto;
 
 public class Instagram {
 
+    public InstagramDto dto;
+
     public boolean registerUser(InstagramDto dto){
         boolean isUserRegistered = false;
         boolean isUserValid = validateUser(dto);
@@ -11,6 +13,7 @@ public class Instagram {
         if(isUserValid == true){
             isUserRegistered = true;
             System.out.println("Registration Successful");
+            this.dto = dto;
         }
         else{
             System.out.println("Registration Failed");
@@ -68,5 +71,15 @@ public class Instagram {
         }
 
         return isValidUser;
+    }
+
+    public void getUserDetails(){
+        System.out.println("User Full Name is "+this.dto.getFullName());
+        System.out.println("User Name is "+this.dto.getUserName());
+        System.out.println("User MobileOrEmail is "+this.dto.getMobileNumberOrEmail());
+        System.out.println("Account Password is "+this.dto.getPassword());
+        System.out.println("User D.O.B is "+this.dto.getDateOfBirth());
+        System.out.println("User Gender is "+this.dto.getGender());
+        System.out.println("----------------------------------------------------");
     }
 }

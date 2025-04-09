@@ -3,12 +3,14 @@ package com.xworkz.facebookapp.facebook;
 import com.xworkz.facebookapp.facebookDto.FacebookDto;
 
 public class Facebook {
+    public FacebookDto dto;
     public boolean registerUser(FacebookDto dto){
         boolean isRegistered = false;
         boolean isValid = validateUser(dto);
 
         if(isValid == true){
             isRegistered = true;
+            this.dto = dto;
             System.out.println("Facebook Registration Successful");
         }
         else{
@@ -69,5 +71,21 @@ public class Facebook {
         }
 
         return isValidUser;
+    }
+    private String firstName;
+    private String lastName;
+    private String mobileOrEmail;
+    private String newPassword;
+    private String confirmPassword;
+    private String birthDate;
+    private String gender;
+
+    public void getUserDetails(){
+        System.out.println("User First Name is "+this.dto.getFirstName());
+        System.out.println("User Last Name is "+this.dto.getLastName());
+        System.out.println("User MobileOrEmail is "+this.dto.getMobileOrEmail());
+        System.out.println("User Password is "+this.dto.getNewPassword());
+        System.out.println("User DOB is "+this.dto.getBirthDate());
+        System.out.println("User gender is "+this.dto.getGender());
     }
 }

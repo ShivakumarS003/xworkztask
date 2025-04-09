@@ -8,13 +8,13 @@ public class PancardSevaRunner {
         PancardDto dto = new PancardDto();
 
         dto.setApplicantName("Rajesh Kumar");
-        dto.setFatherName("Mahesh Kumar");
+        dto.setFatherName("Makesh Kumar");
         dto.setDob("15-06-1990");
         dto.setGender("Male");
         dto.setAadhaarNumber("987612345678");
         dto.setMobile("9876543210");
         dto.setEmail("rajesh.kumar@gmail.com");
-        dto.setAddress("4th Main Road, Jayanagar, Bengaluru");
+        dto.setAddress("4th Main Road, Rajajinagar, Bengaluru");
         dto.setPanType("Individual");
 
         Pancard seva = new Pancard();
@@ -22,6 +22,7 @@ public class PancardSevaRunner {
 
         if(result == true) {
             System.out.println("PAN Card will be delivered soon");
+            seva.getApplicantDetails();
         }
     }
 }

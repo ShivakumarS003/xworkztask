@@ -22,6 +22,7 @@ public class ZerodhaRunner {
 
         if(result == true){
             System.out.println("Zerodha Account Created Successfully");
+            stocks.getUserDetails();
         }
     }
 }

@@ -3,12 +3,14 @@ package com.xworkz.upstoxapp.upstox;
 import com.xworkz.upstoxapp.upstoxDto.UpstoxDto;
 
 public class Upstox {
+    public UpstoxDto dto;
     public boolean processAccount(UpstoxDto dto){
         boolean isAccountOpened = false;
         boolean isValid = validateInputs(dto);
 
         if(isValid == true){
             isAccountOpened = true;
+            this.dto =dto;
             System.out.println("Upstox account registration successful");
         } else {
             System.out.println("Upstox account registration failed");
@@ -76,5 +78,16 @@ public class Upstox {
         }
 
         return isValid;
+    }
+    public void getUserDetails(){
+        System.out.println("User Full Name is " + this.dto.getFullName());
+        System.out.println("User Mobile Number is " + this.dto.getMobile());
+        System.out.println("User Email ID is " + this.dto.getEmail());
+        System.out.println("User Date of Birth is " + this.dto.getDob());
+        System.out.println("User PAN Number is " + this.dto.getPanNumber());
+        System.out.println("User Login ID is " + this.dto.getLoginId());
+        System.out.println("Account Password is " + this.dto.getPassword());
+        System.out.println("User Brokerage Plan is " + this.dto.getBrokeragePlan());
+
     }
 }

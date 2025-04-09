@@ -4,13 +4,15 @@ package com.xworkz.scholorshipapp.scholorship;
 import com.xworkz.scholorshipapp.scholorshipDto.ScholarshipDto;
 
 public class Scholorship {
-
+public ScholarshipDto dto;
         public boolean submitApplication(ScholarshipDto dto) {
+
             boolean isSubmitted = false;
             boolean valid = verifyDetails(dto);
 
             if(valid == true) {
                 isSubmitted = true;
+                this.dto = dto;
                 System.out.println("Scholarship Application Submitted Successfully");
             } else {
                 System.out.println("Submission Failed. Check Input Details");
@@ -53,5 +55,12 @@ public class Scholorship {
             }
 
             return isValid;
+        }
+        public void getApplicantDetails() {
+            System.out.println("Applicant Name is " + this.dto.getApplicantName());
+            System.out.println("Institute Name is " + this.dto.getInstituteName());
+            System.out.println("Course Name is " + this.dto.getCourseName());
+            System.out.println("Income Certificate Number is " + this.dto.getCourseName());
+            System.out.println("Bank Account Number is " + this.dto.getBankAccountNumber());
         }
 }

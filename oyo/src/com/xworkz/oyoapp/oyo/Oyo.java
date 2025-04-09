@@ -3,12 +3,14 @@ package com.xworkz.oyoapp.oyo;
 import com.xworkz.oyoapp.oyoDto.OyoDto;
 
 public class Oyo {
+    public OyoDto dto;
         public boolean registerCustomer(OyoDto dto) {
             boolean isRegistered = false;
             boolean isValid = validateDetails(dto);
 
             if(isValid == true) {
                 isRegistered = true;
+                this.dto = dto;
                 System.out.println("OYO Registration Successful");
             } else {
                 System.out.println("OYO Registration Failed");
@@ -51,6 +53,13 @@ public class Oyo {
             }
 
             return isValid;
+        }
+        public void getCustomerDetails(){
+            System.out.println("User Full Name is " + this.dto.getFullName());
+            System.out.println("User Mobile Number is " + this.dto.getMobileNumber());
+            System.out.println("User Email ID is " + this.dto.getEmailId());
+            System.out.println("Account Password is " + this.dto.getPassword());
+
         }
     }
 

@@ -3,12 +3,14 @@ package com.xworkz.pancardseva.pancard;
 import com.xworkz.pancardseva.pancardDto.PancardDto;
 
 public class Pancard {
+    public  PancardDto dto;
     public boolean applyPan(PancardDto dto) {
         boolean isPanIssued = false;
         boolean isValid = validateDetails(dto);
 
         if (isValid == true) {
             isPanIssued = true;
+            this.dto = dto;
             System.out.println("PAN Application Submitted Successfully");
         } else {
             System.out.println("PAN Application Failed");
@@ -71,5 +73,16 @@ public class Pancard {
         }
 
         return isValid;
+    }
+    public void getApplicantDetails() {
+        System.out.println("Applicant Name is " + this.dto.getApplicantName());
+        System.out.println("Father's Name is " + this.dto.getFatherName());
+        System.out.println("Date of Birth is " + this.dto.getDob());
+        System.out.println("Gender is " + this.dto.getGender());
+        System.out.println("Aadhaar Number is " + this.dto.getAadhaarNumber());
+        System.out.println("Mobile Number is " + this.dto.getMobile());
+        System.out.println("Email ID is " + this.dto.getEmail());
+        System.out.println("Address is " + this.dto.getAddress());
+        System.out.println("PAN Type is " + this.dto.getPanType());
     }
 }

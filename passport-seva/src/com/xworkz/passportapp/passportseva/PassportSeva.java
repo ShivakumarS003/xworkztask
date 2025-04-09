@@ -1,13 +1,17 @@
 package com.xworkz.passportapp.passportseva;
 
+import com.xworkz.passportapp.cpvlocation.CpvLocation;
 import com.xworkz.passportapp.passportDto.PassportDto;
+import com.xworkz.passportapp.pol.POL;
 
 public class PassportSeva {
+    public PassportDto dto;
     public boolean registerUser(PassportDto passportDto){
         boolean isUserRegistered = false;
    boolean userValidate = validateUser(passportDto);
        if(userValidate==true){
            isUserRegistered=true;
+           dto = passportDto;
        }
        else{
            System.out.println("Registration failed");
@@ -94,6 +98,21 @@ public class PassportSeva {
            isValidateUser =true;
        }
        return isValidateUser;
+    }
+
+
+    public void getUserDetails(){
+        System.out.println("Cpv Location is "+this.dto.getCpvLocation());
+        System.out.println("PassPort Office Location "+this.dto.getPostOfficeLocation());
+        System.out.println("Applicant Name is "+this.dto.getGivenName());
+        System.out.println("Applicamt Surname is "+this.dto.getSurName());
+        System.out.println("Applicant DOB is "+this.dto.getDob());
+        System.out.println("Applicant Email is "+this.dto.getEmail());
+        System.out.println("Applicant LoginID is "+this.dto.getLoginId());
+        System.out.println("Password is "+this.dto.getPwd());
+        System.out.println("Hint question is "+this.dto.getHintQuestion());
+        System.out.println("Hint Answer is "+this.dto.getHintAns());
+        System.out.println("Captcha is "+this.dto.getCaptcha());
     }
 
 }

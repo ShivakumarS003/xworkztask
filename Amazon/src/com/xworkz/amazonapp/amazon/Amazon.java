@@ -3,12 +3,14 @@ package com.xworkz.amazonapp.amazon;
 import com.xworkz.amazonapp.amazonDto.AmazonDto;
 
 public class Amazon {
+    public AmazonDto dto;
     public boolean processRegistration(AmazonDto dto){
         boolean isRegistered = false;
         boolean detailsValid = checkDetails(dto);
 
         if(detailsValid == true){
             isRegistered = true;
+            this.dto = dto;
             System.out.println("Amazon Registration Successful");
         }
         else{
@@ -59,15 +61,20 @@ public class Amazon {
         }
         else System.out.println("Invalid Country");
 
-        if(dto.getOtp() != null && !dto.getOtp().isEmpty()){
-            isOtp = true;
-        }
-        else System.out.println("Invalid OTP");
 
-        if(isUserName && isMobileOrEmail && isPassword && isRetypePassword && isAddress && isCountry && isOtp){
+
+        if(isUserName && isMobileOrEmail && isPassword && isRetypePassword && isAddress && isCountry ){
             isValid = true;
         }
 
         return isValid;
+    }
+    public void getUserDetails(){
+        System.out.println("User Name is " + this.dto.getUserName());
+        System.out.println("User Mobile or Email is " + this.dto.getMobileNumberOrEmail());
+        System.out.println("Account Password is " + this.dto.getCreatePassword());
+        System.out.println("User Address is " + this.dto.getAddress());
+        System.out.println("User Country is " + this.dto.getCountry());
+
     }
 }

@@ -3,6 +3,8 @@ package com.xworkz.flipkartapp.flipkart;
 import com.xworkz.flipkartapp.flipkartDto.FlipkartDto;
 
 public class Flipkart{
+    public FlipkartDto dto;
+
     public boolean beginRegistration(FlipkartDto dto){
         boolean isRegistered = false;
         boolean isValid = validateInfo(dto);
@@ -10,6 +12,7 @@ public class Flipkart{
         if(isValid == true){
             isRegistered = true;
             System.out.println("Flipkart Registration Successful");
+            this.dto = dto;
         }
         else{
             System.out.println("Flipkart Registration Failed");
@@ -65,15 +68,21 @@ public class Flipkart{
         }
         else System.out.println("Invalid Pin Code");
 
-        if(dto.getOtp() != null && !dto.getOtp().isEmpty()){
-            isOtp = true;
-        }
-        else System.out.println("Invalid OTP");
 
-        if(isName && isMobile && isEmail && isPass && isConfirmPass && isAddress && isPin && isOtp){
+
+        if(isName && isMobile && isEmail && isPass && isConfirmPass && isAddress && isPin ){
             isValid = true;
         }
 
         return isValid;
+    }
+    public void getUserDetails(){
+        System.out.println("User Full Name is " + this.dto.getFullName());
+        System.out.println("User Mobile Number is " + this.dto.getMobileNumber());
+        System.out.println("User Email ID is " + this.dto.getEmailId());
+        System.out.println("Account Password is " + this.dto.getPassword());
+        System.out.println("User Delivery Address is " + this.dto.getDeliveryAddress());
+        System.out.println("User Pin Code is " + this.dto.getPinCode());
+
     }
 }

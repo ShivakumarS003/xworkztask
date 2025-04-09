@@ -41,6 +41,7 @@ public class FastagDto {
         public String getKycDocument() {
             return kycDocument;
         }
+
     }
 
 

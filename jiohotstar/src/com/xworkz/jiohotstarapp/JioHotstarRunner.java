@@ -7,9 +7,9 @@ public class JioHotstarRunner {
     public static void main(String[] args) {
         JioHotstarDto dto = new JioHotstarDto();
 
-        dto.setFullName("Sneha Reddy");
+        dto.setFullName("Nitish Reddy");
         dto.setMobileNumber("9123456780");
-        dto.setEmailId("sneha.reddy@gmail.com");
+        dto.setEmailId("nitish.reddy@gmail.com");
         dto.setSubscriptionPlan("Premium");
         dto.setDeviceType("Smart TV");
 
@@ -18,6 +18,7 @@ public class JioHotstarRunner {
 
         if(result == true) {
             System.out.println("Jio Hotstar Access Granted");
+            stream.getCustomerDetails();
         }
     }
 }

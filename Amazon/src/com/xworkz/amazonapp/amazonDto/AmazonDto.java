@@ -7,7 +7,6 @@ public class AmazonDto {
     private String retypePassword;
     private String address;
     private String country;
-    private String otp;
 
     public void setUserName(String userName){
         this.userName = userName;
@@ -51,10 +50,5 @@ public class AmazonDto {
         return country;
     }
 
-    public void setOtp(String otp){
-        this.otp = otp;
-    }
-    public String getOtp(){
-        return otp;
-    }
+
 }

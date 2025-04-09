@@ -18,6 +18,7 @@ public class OyoRunner {
 
             if(response == true) {
                 System.out.println("Welcome to OYO Rooms");
+                room.getCustomerDetails();
             }
         }
     }

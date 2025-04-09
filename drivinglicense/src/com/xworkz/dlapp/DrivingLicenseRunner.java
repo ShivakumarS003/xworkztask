@@ -18,6 +18,7 @@ public class DrivingLicenseRunner {
 
             if(approved == true) {
                 System.out.println("DL Application Submitted!");
+                dl.getApllicantDetails();
             }
         }
     }

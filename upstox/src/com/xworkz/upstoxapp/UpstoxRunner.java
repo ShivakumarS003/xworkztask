@@ -18,11 +18,12 @@ public class UpstoxRunner {
         dto.setBrokeragePlan("Basic");
         dto.setNomineeName("Baba Son");
 
-        Upstox seva = new Upstox();
-        boolean result = seva.processAccount(dto);
+        Upstox up = new Upstox();
+        boolean result = up.processAccount(dto);
 
         if(result == true){
             System.out.println("Upstox Account Created Successfully");
+         up.getUserDetails();
         }
     }
 }

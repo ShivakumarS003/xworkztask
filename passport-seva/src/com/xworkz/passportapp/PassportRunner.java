@@ -28,6 +28,7 @@ public class PassportRunner {
 
        if(message == true){
            System.out.println("User Registration Successful");
+           passportSeva.getUserDetails();
        }
        else System.out.println("User Registration Unsuccessful");
     }

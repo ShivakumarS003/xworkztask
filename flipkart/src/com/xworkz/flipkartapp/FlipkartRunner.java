@@ -14,13 +14,13 @@ public class FlipkartRunner {
         dto.setConfirmPassword("Hitman@45");
         dto.setDeliveryAddress("Dadar, Mumbai");
         dto.setPinCode("400014");
-        dto.setOtp("X5Y6Z7");
 
         Flipkart order = new Flipkart();
         boolean result = order.beginRegistration(dto);
 
         if(result == true){
             System.out.println("Flipkart Account Created Successfully");
+            order.getUserDetails();
         }
     }
 }

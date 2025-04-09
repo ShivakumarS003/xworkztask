@@ -18,6 +18,7 @@ public class ScholoshipRunner {
 
             if(result == true) {
                 System.out.println("Application Submitted");
+                seva.getApplicantDetails();
             }
         }
     }

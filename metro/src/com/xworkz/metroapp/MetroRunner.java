@@ -7,7 +7,7 @@ public class MetroRunner {
         public static void main(String[] args) {
             MetroDto dto = new MetroDto();
 
-            dto.setPassengerName("Rahul Singh");
+            dto.setPassengerName("K L Rahul");
             dto.setGender("Male");
             dto.setDob("01-01-2000");
             dto.setStartStation("Rajajinagar");
@@ -20,6 +20,7 @@ public class MetroRunner {
 
             if(result == true) {
                 System.out.println("Metro Pass Ready to Use!");
+                pass.getPassengersDetails();
             }
         }
     }

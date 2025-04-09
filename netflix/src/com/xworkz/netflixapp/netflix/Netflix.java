@@ -3,12 +3,15 @@ package com.xworkz.netflixapp.netflix;
 import com.xworkz.netflixapp.netflixdto.NetflixDto;
 
 public class Netflix {
+
+    public NetflixDto dto;
         public boolean registerNetflixUser(NetflixDto dto) {
             boolean isRegistered = false;
             boolean isValid = verifyNetflixInfo(dto);
 
             if(isValid == true) {
                 isRegistered = true;
+                this.dto = dto;
                 System.out.println("Netflix Registration Successful");
             } else {
                 System.out.println("Netflix Registration Failed");
@@ -61,6 +64,14 @@ public class Netflix {
             }
 
             return isValid;
+        }
+        public void getUserDetails(){
+            System.out.println("User Full Name is "+this.dto.getFullName());
+            System.out.println("User EmailId is "+this.dto.getEmail());
+            System.out.println("User Mobile NUmber is "+this.dto.getMobileNumber());
+            System.out.println("Account PassWord is "+this.dto.getPassword());
+            System.out.println("User Profile name is "+this.dto.getProfileName());
+            System.out.println("User plan Type is "+this.dto.getPlanType());
         }
     }
 
