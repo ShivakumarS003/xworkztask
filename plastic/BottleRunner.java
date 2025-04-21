@@ -1,11 +1,29 @@
-package com.xworkz.inhertance.plastic;
+package com.xworkz.methodOverriding.plastic;
 
-import com.xworkz.inhertance.plastic.Plastic.Plastic;
-import com.xworkz.inhertance.plastic.bottle.Bottle;
+import com.xworkz.methodOverriding.plastic.Plastic.Plastic;
+import com.xworkz.methodOverriding.plastic.bottle.Bottle;
 
-public class BottleRunner extends Plastic {
+public class BottleRunner {
     public static void main(String[] args) {
-        Bottle bottle = new Bottle();
-        bottle.property();
+        Plastic plastic = new Plastic();
+        plastic.melt();
+        plastic.mold();
+        plastic.insulate();
+        plastic.floatInWater();
+        plastic.nonBiodegradable();
+
+        Plastic plastic1 = new Bottle();
+        plastic1.melt();
+        plastic1.mold();
+        plastic1.insulate();
+        plastic1.floatInWater();
+        plastic1.nonBiodegradable();
+
+        Bottle poly = new Bottle();
+        poly.melt();
+        poly.mold();
+        poly.insulate();
+        poly.floatInWater();
+        poly.nonBiodegradable();
     }
 }
